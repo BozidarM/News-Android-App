@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/homeFragment"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/businessFragment"
+            android:title="Buisness" />
+
+        <item
+            android:id="@+id/entrFragment"
+            android:title="Entertainment" />
+
+        <item
+            android:id="@+id/healthFragment"
+            android:title="Health" />
+
+        <item
+            android:id="@+id/scienceFragment"
+            android:title="Science" />
+
+        <item
+            android:id="@+id/sportsFragment"
+            android:title="Sports" />
+
+        <item
+            android:id="@+id/techFragment"
+            android:title="Technology" />
+
+        <item
+            android:id="@+id/programmingFragment"
+            android:title="Programming" />
+
+    </group>
+</menu>

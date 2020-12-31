@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.newsapp.homeFragment"
+        android:label="NewsApp"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_buisnessFragment"
+            app:destination="@id/businessFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_entrFragment"
+            app:destination="@id/entrFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_healthFragment"
+            app:destination="@id/healthFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_scienceFragment"
+            app:destination="@id/scienceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sportsFragment"
+            app:destination="@id/sportsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_techFragment"
+            app:destination="@id/techFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_srbFragment"
+            app:destination="@id/programmingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/businessFragment"
+        android:name="com.example.newsapp.businessFragment"
+        android:label="BusinessNews"
+        tools:layout="@layout/fragment_business">
+        <action
+            android:id="@+id/action_buisnessFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entrFragment"
+        android:name="com.example.newsapp.entrFragment"
+        android:label="EntertainmentNews"
+        tools:layout="@layout/fragment_entr">
+        <action
+            android:id="@+id/action_entrFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthFragment"
+        android:name="com.example.newsapp.healthFragment"
+        android:label="HealthNews"
+        tools:layout="@layout/fragment_health">
+        <action
+            android:id="@+id/action_healthFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scienceFragment"
+        android:name="com.example.newsapp.scienceFragment"
+        android:label="ScienceNews"
+        tools:layout="@layout/fragment_science">
+        <action
+            android:id="@+id/action_scienceFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportsFragment"
+        android:name="com.example.newsapp.sportsFragment"
+        android:label="SportsNews"
+        tools:layout="@layout/fragment_sports">
+        <action
+            android:id="@+id/action_sportsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/techFragment"
+        android:name="com.example.newsapp.techFragment"
+        android:label="TechnologyNews"
+        tools:layout="@layout/fragment_tech">
+        <action
+            android:id="@+id/action_techFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/programmingFragment"
+        android:name="com.example.newsapp.programmingFragment"
+        android:label="ProgrammingNews"
+        tools:layout="@layout/fragment_programming">
+        <action
+            android:id="@+id/action_srbFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
