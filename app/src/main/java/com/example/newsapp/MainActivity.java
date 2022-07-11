@@ -6,14 +6,13 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity implements
+public class MainActivity extends AppCompat implements
         NavigationView.OnNavigationItemSelectedListener {
     public DrawerLayout drawerLayout;
 
@@ -102,10 +101,6 @@ public class MainActivity extends AppCompatActivity implements
 
             case R.id.techFragment:
                 navController.navigate(R.id.techFragment);
-                break;
-
-            case R.id.programmingFragment:
-                navController.navigate(R.id.programmingFragment);
                 break;
         }
         return true;

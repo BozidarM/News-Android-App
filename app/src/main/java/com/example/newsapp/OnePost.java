@@ -1,8 +1,5 @@
 package com.example.newsapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -12,18 +9,22 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class OnePost extends AppCompatActivity implements View.OnClickListener {
+public class OnePost extends AppCompat implements View.OnClickListener {
 
     String title, author, published, image, link;
-    Button btnSave, btnHome, btnSaved;
+    Button btnSave;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_post);
+        setTitle(R.string.app_name);
 
         initComponents();
 
@@ -41,10 +42,6 @@ public class OnePost extends AppCompatActivity implements View.OnClickListener {
     private void initComponents() {
         btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(this);
-        btnHome = findViewById(R.id.btnHome);
-        btnHome.setOnClickListener(this);
-        btnSaved = findViewById(R.id.btnSaved);
-        btnSaved.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
         title = extras.getString("title");
@@ -52,38 +49,28 @@ public class OnePost extends AppCompatActivity implements View.OnClickListener {
         published = extras.getString("published");
         image = extras.getString("image");
         link = extras.getString("link");
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        HelpersFunctions hp = new HelpersFunctions(this);
+        hp.bottomNavigationFunction(bottomNavigationView);
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.btnSave:
 
-                DataBase db = new DataBase(this);
-                List<NewsModelDB> post = db.getAllSavedNews();
-                ArrayList<String> titles = new ArrayList<>();
-                for (NewsModelDB n : post) {
-                    String titleFromDb = n.getTitle();
-                    titles.add(titleFromDb);
-                }
+        DataBase db = new DataBase(this);
+        List<NewsModelDB> post = db.getAllSavedNews();
+        ArrayList<String> titles = new ArrayList<>();
+        for (NewsModelDB n : post) {
+            String titleFromDb = n.getTitle();
+            titles.add(titleFromDb);
+        }
 
-                if (titles.contains(title)){
-                    Toast.makeText(this, "This post is already saved.", Toast.LENGTH_SHORT).show();
-                }else{
-                    db.addPost(title, author, published, image, link);
-                    Toast.makeText(this, "Post is saved.", Toast.LENGTH_SHORT).show();
-                }
-                break;
-
-            case R.id.btnSaved:
-                Intent intent = new Intent(this, SavedNews.class);
-                startActivity(intent);
-                break;
-
-            case R.id.btnHome:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                break;
+        if (titles.contains(title)){
+            Toast.makeText(this, R.string.already_saved, Toast.LENGTH_SHORT).show();
+        }else{
+            db.addPost(title, author, published, image, link);
+            Toast.makeText(this, R.string.post_saved, Toast.LENGTH_SHORT).show();
         }
     }
 }

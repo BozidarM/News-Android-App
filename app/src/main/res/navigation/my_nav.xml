@@ -28,9 +28,6 @@
         <action
             android:id="@+id/action_homeFragment_to_techFragment"
             app:destination="@id/techFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_srbFragment"
-            app:destination="@id/programmingFragment" />
     </fragment>
     <fragment
         android:id="@+id/businessFragment"
@@ -84,15 +81,6 @@
         tools:layout="@layout/fragment_tech">
         <action
             android:id="@+id/action_techFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/programmingFragment"
-        android:name="com.example.newsapp.programmingFragment"
-        android:label="ProgrammingNews"
-        tools:layout="@layout/fragment_programming">
-        <action
-            android:id="@+id/action_srbFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

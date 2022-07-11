@@ -45,19 +45,6 @@ public class DataBase extends SQLiteOpenHelper {
         db.insert(NewsModelDB.TABLE_NAME, null, cv);
     }
 
-    public void editPost(int postId, String title, String author, String published_at, String image, String link){
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put(NewsModelDB.FIELD_TITLE, title);
-        cv.put(NewsModelDB.FIELD_AUTHOR, author);
-        cv.put(NewsModelDB.FIELD_PUBLISHED_AT, published_at);
-        cv.put(NewsModelDB.FIELD_IMAGE, image);
-        cv.put(NewsModelDB.FIELD_LINK, link);
-
-        db.update(NewsModelDB.TABLE_NAME, cv, NewsModelDB.FIELD_POST_ID + " = ?", new String[] {String.valueOf(postId)});
-    }
-
     public int deletePost(int postId){
         SQLiteDatabase db = this.getWritableDatabase();
 

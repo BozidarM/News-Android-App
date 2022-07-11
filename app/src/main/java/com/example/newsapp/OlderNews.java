@@ -1,43 +1,34 @@
 package com.example.newsapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
-import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
-import java.util.LinkedList;
 
-public class OlderNews extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
+public class OlderNews extends AppCompat implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
 
     Button btnPicker, btnSubmit;
+    EditText etKeyword;
     TextView twDate;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_older_news);
-
-        twDate = findViewById(R.id.twDate);
-
+        setTitle(R.string.older_news);
 
         initComponents();
     }
@@ -47,6 +38,16 @@ public class OlderNews extends AppCompatActivity implements DatePickerDialog.OnD
         btnPicker.setOnClickListener(this);
         btnSubmit = findViewById(R.id.btnSubimt);
         btnSubmit.setOnClickListener(this);
+        twDate = findViewById(R.id.twDate);
+        etKeyword = findViewById(R.id.etKeyword);
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        HelpersFunctions hp = new HelpersFunctions(this);
+        hp.bottomNavigationFunction(bottomNavigationView);
+
+        MenuItem menuItem = bottomNavigationView.getMenu().getItem(2);
+        menuItem.setChecked(true);
+
     }
 
     public void showDatePickerDialog(){
@@ -61,6 +62,7 @@ public class OlderNews extends AppCompatActivity implements DatePickerDialog.OnD
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        month++;
         String monthString = ""+month;
         if (monthString.length() == 1) {
             monthString = "0" + monthString;
@@ -70,7 +72,7 @@ public class OlderNews extends AppCompatActivity implements DatePickerDialog.OnD
             dayString = "0" + dayString;
         }
 
-        String date = "Choosen date: " + year + "-" + monthString + "-" + dayString;
+        String date = year + "-" + monthString + "-" + dayString;
         twDate.setText(date);
     }
 
@@ -85,13 +87,20 @@ public class OlderNews extends AppCompatActivity implements DatePickerDialog.OnD
                 Intent intent = new Intent(this, DatePicked.class);
                 Bundle extras = new Bundle();
 
-                String date = twDate.getText().toString();
-                String dateForUrl = date.substring(date.length() - 10);
+                if(!etKeyword.getText().toString().equals("") && !twDate.getText().toString().equals(""))
+                {
+                    String date = twDate.getText().toString();
+                    String dateForUrl = date.substring(date.length() - 10);
 
-                extras.putString("date", dateForUrl);
+                    extras.putString("keyword", etKeyword.getText().toString());
+                    extras.putString("date", dateForUrl);
 
-                intent.putExtras(extras);
-                startActivity(intent);
+                    intent.putExtras(extras);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this, R.string.empty_keyword_date, Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
     }

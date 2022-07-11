@@ -1,5 +1,43 @@
 <resources>
     <string name="app_name">NewsApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="latest_news">Latest News</string>
+    <string name="saved_news">Saved News</string>
+    <string name="older_news">Older News</string>
+    <string name="search">Search News</string>
+    <string name="save_post">Save Post</string>
+    <string name="loading_news">Loading News…</string>
+
+    <string name="home">Home</string>
+    <string name="business">Business</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="health">Health</string>
+    <string name="science">Science</string>
+    <string name="sports">Sports</string>
+    <string name="technology">Technology</string>
+
+    <string name="img_description">Image</string>
+    <string name="label_source">Source: </string>
+    <string name="label_publishedAt">Published At: </string>
+
+    <string name="button_datePicker">Pick a date here…</string>
+    <string name="keyword_placeholder">Enter keyword here…</string>
+    <string name="empty_keyword_date">Keyword or Date is missing!</string>
+    <string name="chosen_date">Chosen date: </string>
+    <string name="button_submit">Submit</string>
+    <string name="button_delete">Delete</string>
+    <string name="button_deleted">Deleted</string>
+    <string name="msg_deleted">Item is deleted!</string>
+
+    <string name="label_search">Type in search above</string>
+    <string name="nothing_found">No results found</string>
+
+    <string name="already_saved">This post is already saved.</string>
+    <string name="post_saved">Post is saved.</string>
+
+    <string name="chose_lang">Chose Language: </string>
+
+    <string name="eng_flag_desc">English</string>
+    <string name="srb_flag_desc">Serbian</string>
+
 </resources>

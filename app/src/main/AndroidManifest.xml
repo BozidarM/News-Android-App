@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp">
-        <activity android:name=".SearchNews"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SearchNews" />
         <activity android:name=".DatePicked" />
         <activity android:name=".OlderNews" />
         <activity android:name=".OnePost" />
         <activity android:name=".SavedNews" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LanguageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vesti</string>
+
+    <string name="latest_news">Najnovije Vesti</string>
+    <string name="saved_news">Sačuvane Vesti</string>
+    <string name="older_news">Starije Vesti</string>
+    <string name="search">Pretraga Vesti</string>
+    <string name="save_post">Sačuvaj Vest</string>
+    <string name="loading_news">Očitavanje Vesti…</string>
+
+    <string name="home">Početna</string>
+    <string name="business">Biznis</string>
+    <string name="entertainment">Zabava</string>
+    <string name="health">Zdravlje</string>
+    <string name="science">Nauka</string>
+    <string name="sports">Sport</string>
+    <string name="technology">Tehnologije</string>
+
+    <string name="img_description">Slika</string>
+    <string name="label_source">Izvor: </string>
+    <string name="label_publishedAt">Objavljeno: </string>
+
+    <string name="button_datePicker">Izaberite datum…</string>
+    <string name="keyword_placeholder">Unesite ključnu reč…</string>
+    <string name="empty_keyword_date">Potrebno je uneti i datum i ključnu reč!</string>
+    <string name="chosen_date">Izabran Datum: </string>
+    <string name="button_submit">Potvrdi</string>
+    <string name="button_delete">Obriši</string>
+    <string name="button_deleted">Obrisano</string>
+    <string name="msg_deleted">Vest je obrisana!</string>
+
+    <string name="label_search">Unesite parametre pretrage u polje iznad</string>
+    <string name="nothing_found">Nije pronađen ni jedan rezultat</string>
+
+    <string name="already_saved">Ova vest je već prethodno sačuvana.</string>
+    <string name="post_saved">Vest je uspešno sačuvana.</string>
+
+    <string name="chose_lang">Izaberite jezik: </string>
+
+    <string name="eng_flag_desc">Engleski</string>
+    <string name="srb_flag_desc">Srpski</string>
+
+</resources>
